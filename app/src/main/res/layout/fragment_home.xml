@@ -90,7 +90,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_home_add_new"
                 style="@style/ButtonStyle"

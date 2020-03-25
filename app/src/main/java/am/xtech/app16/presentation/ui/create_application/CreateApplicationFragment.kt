@@ -77,8 +77,7 @@ class CreateApplicationFragment : BaseFragment() {
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
                 etOutTime.setText(SimpleDateFormat("HH:mm").format(cal.time))
-                startTime =
-                    SimpleDateFormat(am.xtech.app16.utils.DateUtils.datePattern).format(cal.time)
+                startTime = SimpleDateFormat(am.xtech.app16.utils.DateUtils.datePattern).format(cal.time)
 
             }
             TimePickerDialog(

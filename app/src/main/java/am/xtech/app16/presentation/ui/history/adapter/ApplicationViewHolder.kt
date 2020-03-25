@@ -18,23 +18,9 @@ class ApplicationViewHolder(
     private val endTime = itemView.findViewById<TextView>(R.id.tv_item_history_end_date)
 
     override fun bind(item: Application) {
-
-        val date = DateUtils.convertDateFormatToFormat(
-            item.outDatetime, DateUtils.datePattern, DateUtils.yyyy_MM_dd,
-            Locale.ENGLISH
-        )
-        val time1 = DateUtils.convertDateFormatToFormat(
-            item.outDatetime,
-            DateUtils.datePattern,
-            DateUtils.HH_mm,
-            Locale.ENGLISH
-        )
-        val time2 = DateUtils.convertDateFormatToFormat(
-            item.plannedReturnDatetime,
-            DateUtils.datePattern,
-            DateUtils.HH_mm,
-            Locale.ENGLISH
-        )
+        val date = item.finishedAt?:" "
+        val time1 =item.outDatetime
+        val time2 = item.plannedReturnDatetime
 
         createdDate.text = date
         val text1 =  itemView.context.getString(R.string.out_time) +" "+ time1

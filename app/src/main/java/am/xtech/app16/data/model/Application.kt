@@ -20,6 +20,10 @@ data class Application(
 	@field:SerializedName("created_at")
 	val createdAt: String? = null,
 
+
+	@field:SerializedName("finished_at")
+	val finishedAt: String? = null,
+
 	@field:SerializedName("middle_name")
 	val middleName: String? = null,
 

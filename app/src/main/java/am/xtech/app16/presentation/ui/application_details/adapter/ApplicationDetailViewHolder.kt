@@ -4,7 +4,6 @@ import am.xtech.app16.R
 import am.xtech.app16.data.model.Application
 import am.xtech.app16.presentation.base.BaseViewHolder
 import am.xtech.app16.presentation.ui.application_details.ModelDetailItem
-import am.xtech.app16.utils.DateUtils
 import android.view.View
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
