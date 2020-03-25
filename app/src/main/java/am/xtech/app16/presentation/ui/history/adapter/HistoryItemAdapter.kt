@@ -1,4 +1,4 @@
-package am.xtech.app16.presentation.ui.notifications.adapter
+package am.xtech.app16.presentation.ui.history.adapter
 
 import am.xtech.app16.R
 import am.xtech.app16.data.model.Application
@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class HistoryItemAdapter():RecyclerView.Adapter<ApplicationViewHolder>() {
+class HistoryItemAdapter(val listener: EventListener):RecyclerView.Adapter<ApplicationViewHolder>() {
 
     private var listItem = ArrayList<Application>()
 
@@ -32,5 +32,12 @@ class HistoryItemAdapter():RecyclerView.Adapter<ApplicationViewHolder>() {
     override fun onBindViewHolder(holder: ApplicationViewHolder, position: Int) {
         val item = listItem[position]
         holder.bind(item = listItem[position])
+        holder.itemView.setOnClickListener {
+            listener.onItemClicked(item)
+        }
+    }
+
+    interface EventListener{
+        fun onItemClicked(item:Application)
     }
 }

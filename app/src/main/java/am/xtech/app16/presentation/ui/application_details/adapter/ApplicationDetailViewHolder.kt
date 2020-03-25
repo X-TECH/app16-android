@@ -1,50 +1,28 @@
-package am.xtech.app16.presentation.ui.history.adapter
+package am.xtech.app16.presentation.ui.application_details.adapter
 
 import am.xtech.app16.R
 import am.xtech.app16.data.model.Application
 import am.xtech.app16.presentation.base.BaseViewHolder
+import am.xtech.app16.presentation.ui.application_details.ModelDetailItem
 import am.xtech.app16.utils.DateUtils
 import android.view.View
 import android.widget.TextView
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import java.util.*
 
 
-class ApplicationViewHolder(
+class ApplicationDetailViewHolder(
     itemView: View
-) : BaseViewHolder<Application>(itemView) {
+) : BaseViewHolder<ModelDetailItem>(itemView) {
 
-    private val createdDate = itemView.findViewById<TextView>(R.id.tv_item_history_date)
-    private val startTime = itemView.findViewById<TextView>(R.id.tv_item_history_start_date)
-    private val endTime = itemView.findViewById<TextView>(R.id.tv_item_history_end_date)
+    private val title = itemView.findViewById<TextInputLayout>(R.id.til_item_application_detail_title)
+    private val description = itemView.findViewById<TextInputEditText>(R.id.et_item_application_detail_description)
 
-    override fun bind(item: Application) {
-
-        val date = DateUtils.convertDateFormatToFormat(
-            item.outDatetime, DateUtils.datePattern, DateUtils.yyyy_MM_dd,
-            Locale.ENGLISH
-        )
-        val time1 = DateUtils.convertDateFormatToFormat(
-            item.outDatetime,
-            DateUtils.datePattern,
-            DateUtils.HH_mm,
-            Locale.ENGLISH
-        )
-        val time2 = DateUtils.convertDateFormatToFormat(
-            item.plannedReturnDatetime,
-            DateUtils.datePattern,
-            DateUtils.HH_mm,
-            Locale.ENGLISH
-        )
-
-        createdDate.text = date
-        val text1 =  itemView.context.getString(R.string.out_time) +" "+ time1
-        val text2 =  itemView.context.getString(R.string.back_time) +" "+ time2
-
-        startTime.text = text1
-        endTime.text = text2
+    override fun bind(item: ModelDetailItem) {
+        title.hint = item.title
+        description.setText(item.description)
     }
-
-
 }
 
 

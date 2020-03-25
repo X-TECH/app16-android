@@ -1,4 +1,4 @@
-package am.xtech.app16.presentation.ui.notifications.adapter
+package am.xtech.app16.presentation.ui.history.adapter
 
 import am.xtech.app16.R
 import am.xtech.app16.data.model.Application
