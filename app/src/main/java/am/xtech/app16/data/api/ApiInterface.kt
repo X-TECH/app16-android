@@ -24,9 +24,8 @@ interface ApiInterface {
     @GET("v1/applications")
     fun getHistory(@Query("device_token") deviceId: String):LiveData<GenericApiResponse<BaseDataModel<List<Application>>>>
 
-
-//    @GET("")
-//    fun finishApplication(): LiveData<GenericApiResponse<List<Any>>>
+    @GET("")
+    fun get(): LiveData<GenericApiResponse<List<Any>>>
 //
 //    @GET("")
 //    fun finishApplication(): LiveData<GenericApiResponse<List<Any>>>

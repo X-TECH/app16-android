@@ -1,4 +1,4 @@
-package am.xtech.app16.presentation.ui.notifications.state
+package am.xtech.app16.presentation.ui.history.state
 
 import am.xtech.app16.data.model.Application
 

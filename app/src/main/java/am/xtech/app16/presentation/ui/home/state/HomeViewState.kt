@@ -4,5 +4,8 @@ import am.xtech.app16.data.model.Application
 
 data class HomeViewState(
     var isCreated: Boolean? = null,
-    var isFinished: Boolean? = null
+    var isFinished: Boolean? = null,
+    var application: Application? = null
+
+
 )

@@ -46,6 +46,9 @@ abstract class NetworkBoundResources<ResponseObject, ViewStateType> {
     }
 
     fun onReturnError(message: String,code:Int) {
+
+
+
         result.value = DataState.error(message,code)
     }
 

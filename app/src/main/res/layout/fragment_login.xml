@@ -27,8 +27,8 @@
                 android:layout_marginBottom="64dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_group_26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="120dp"
+                android:layout_height="120dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/lay_login_first_name"

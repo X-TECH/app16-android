@@ -1,6 +1,7 @@
 package am.xtech.app16.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Application(
 
@@ -54,4 +55,4 @@ data class Application(
 
 	@field:SerializedName("first_name")
 	val firstName: String? = null
-)
+):Serializable

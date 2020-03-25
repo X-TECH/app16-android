@@ -24,5 +24,7 @@
     <string name="text_welcome">Բարի գալուստ</string>
     <string name="out_time">Ելքի ժամ</string>
     <string name="back_time">Վերադարձի ժամ</string>
+    <string name="empti_application_list">Ձևաթղթեր դեռ չկան</string>
+    <string name="button_application">Ձևաթուղթ</string>
 
 </resources>

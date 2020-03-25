@@ -17,7 +17,8 @@ object HomeRepository {
             override fun handleSuccessResponse(response: ApiSuccessResponse<BaseDataModel<Application>>) {
                 result.value = DataState.data(
                     null,
-                    data = HomeViewState( isCreated = true)
+
+                    data = HomeViewState(application = response.body.data, isCreated = true)
                 )
             }
 

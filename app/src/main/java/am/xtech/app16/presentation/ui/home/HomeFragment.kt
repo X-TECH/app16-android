@@ -2,6 +2,7 @@ package am.xtech.app16.presentation.ui.home
 
 import am.xtech.app16.R
 import am.xtech.app16.app.App
+import am.xtech.app16.data.model.Application
 import am.xtech.app16.presentation.base.BaseFragment
 import am.xtech.app16.presentation.ui.home.state.HomeStateEvent
 import am.xtech.app16.presentation.ui.home.state.HomeViewState
@@ -13,6 +14,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -25,6 +27,8 @@ class HomeFragment : BaseFragment() {
     lateinit var imageQr: ImageView
     lateinit var layotutCreateApplication: View
     lateinit var layoutQr: View
+    var application : Application? = null
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,9 +41,7 @@ class HomeFragment : BaseFragment() {
         val btnCreateApplication = root.findViewById<View>(R.id.btn_home_add_new)
         val btnFinishApplication = root.findViewById<View>(R.id.btn_home_finish)
         val btnHistoryApplication = root.findViewById<View>(R.id.btn_home_history)
-
-
-
+        val btnHomeApplicationDetails = root.findViewById<View>(R.id.btn_home_application)
 
         val textWelcome: TextView = root.findViewById(R.id.tv_home_title)
         val text = getString(R.string.text_welcome)  +" "+ App.sUserManager.getUser()?.getFullName()
@@ -51,6 +53,14 @@ class HomeFragment : BaseFragment() {
 
         btnCreateApplication.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_home_to_navigation_create_form)
+        }
+
+        btnHomeApplicationDetails.setOnClickListener {
+
+            if(application!= null){
+                val  data = bundleOf("argument_application" to application)
+                findNavController().navigate(R.id.action_navigation_home_to_navigation_application_details,data)
+            }
         }
 
         btnFinishApplication.setOnClickListener {
@@ -85,6 +95,8 @@ class HomeFragment : BaseFragment() {
 
             dataState.data?.let { viewstate ->
 
+
+
                 viewstate.peekContent().let {
                     it.isCreated.let { result ->
 
@@ -93,6 +105,9 @@ class HomeFragment : BaseFragment() {
                             showQRLayout()
                         }
                     }
+
+                    application  = it.application
+
 
 
                     it.isFinished.let { result ->
@@ -113,6 +128,7 @@ class HomeFragment : BaseFragment() {
             }
 
             dataState.message?.let {
+
             }
 
             dataState.loading.let {
@@ -122,10 +138,10 @@ class HomeFragment : BaseFragment() {
 
         viewModel.viewState.observe(viewLifecycleOwner, androidx.lifecycle.Observer { viewState ->
             viewState.apply { }?.let {
-
             }
         })
     }
+
 
     private fun showQRLayout() {
 
@@ -133,7 +149,7 @@ class HomeFragment : BaseFragment() {
             layotutCreateApplication.visibility = GONE
 
             val imageURL =
-                "http://app16.x-tech.am/api/v1/applications/qr_code?device_token=" + App.sUserManager.getUUID()
+                "https://app16.x-tech.am/api/v1/applications/qr_code?device_token=" + App.sUserManager.getUUID()
             Glide.with(this)
                 .load(imageURL)
                 .centerCrop()

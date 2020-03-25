@@ -1,9 +1,9 @@
-package am.xtech.app16.presentation.ui.notifications
+package am.xtech.app16.presentation.ui.history
 
 import am.xtech.app16.app.App.Companion.sApiService
 import am.xtech.app16.data.model.Application
 import am.xtech.app16.data.model.BaseDataModel
-import am.xtech.app16.presentation.ui.notifications.state.HistoryViewState
+import am.xtech.app16.presentation.ui.history.state.HistoryViewState
 import am.xtech.app16.utils.ApiSuccessResponse
 import am.xtech.app16.utils.DataState
 import am.xtech.app16.utils.GenericApiResponse
