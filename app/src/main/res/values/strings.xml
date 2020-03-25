@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">App16</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hint_first_name">Անուն</string>
+    <string name="hint_last_name">Ազգանուն</string>
+    <string name="hint_middle_name">Հայրանուն</string>
+    <string name="button_next">Առաջ</string>
+    <string name="field_is_required" type="id">Պարտադիր դաշտ</string>
+    <string name="button_add_new">Ստեղծել ձևաթուղթ</string>
+    <string name="button_history">Պատմություն</string>
+    <string name="hint_exit_time">Ելքի ժամ</string>
+    <string name="hint_exit_address">Ելքի հասցե</string>
+    <string name="hint_exit_address_name">Այցելության վայրի հասցե</string>
+    <string name="hint_visiting_address_name">Այցելության վայրի անվանում</string>
+    <string name="hint_visiting_reason">Այցելության նպատակը</string>
+    <string name="hint_return_time">Վերադարձի ակնկալվող ժամը</string>
+    <string name="button_create_form_create">Ստեղծել</string>
+    <string name="title_splash">Splash</string>
+    <string name="title_create_form">Create form</string>
+    <string name="button_finish">Ավարտել</string>
+    <string name="title_EMPTY" />
+    <string name="text_welcome">Բարի գալուստ</string>
+    <string name="out_time">Ելքի ժամ</string>
+    <string name="back_time">Վերադարձի ժամ</string>
+
+</resources>

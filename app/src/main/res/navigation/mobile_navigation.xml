@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_splash">
+
+    <fragment
+        android:id="@+id/navigation_splash"
+        android:name="am.xtech.app16.presentation.ui.splash.SplashFragment"
+        android:label="@string/title_splash"
+        tools:layout="@layout/fragment_splash" >
+
+        <action
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_navigation_splash_to_navigation_login"
+            app:destination="@id/navigation_login" />
+
+        <action
+            app:popUpTo="@+id/mobile_navigation"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_navigation_splash_to_navigation_home"
+            app:destination="@id/navigation_home" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="am.xtech.app16.presentation.ui.login.LoginFragment"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/action_navigation_login_to_navigation_home"
+            app:destination="@id/navigation_home" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_create_form"
+        android:name="am.xtech.app16.presentation.ui.create_application.CreateApplicationFragment"
+        android:label="@string/title_create_form"
+        tools:layout="@layout/fragment_create_form" />
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="am.xtech.app16.presentation.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_create_form"
+            app:destination="@id/navigation_create_form" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_history"
+            app:destination="@id/navigation_history" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_history"
+        android:name="am.xtech.app16.presentation.ui.notifications.HistoryFragment"
+        tools:layout="@layout/fragment_history" />
+</navigation>
