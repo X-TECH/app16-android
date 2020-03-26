@@ -29,8 +29,6 @@ class ApplicationViewHolder(
         startTime.text = text1
         endTime.text = text2
     }
-
-
 }
 
 

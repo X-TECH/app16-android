@@ -12,8 +12,7 @@
     <string name="button_history">Պատմություն</string>
     <string name="hint_exit_time">Ելքի ժամ</string>
     <string name="hint_exit_address">Ելքի հասցե</string>
-    <string name="hint_exit_address_name">Այցելության վայրի հասցե</string>
-    <string name="hint_visiting_address_name">Այցելության վայրի անվանում</string>
+    <string name="hint_visiting_address_name">Այցելության վայրի  հասցե / անվանում</string>
     <string name="hint_visiting_reason">Այցելության նպատակը</string>
     <string name="hint_return_time">Վերադարձի ակնկալվող ժամը</string>
     <string name="button_create_form_create">Ստեղծել</string>
